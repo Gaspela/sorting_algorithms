@@ -5,12 +5,12 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-	
+
 	listint_t *tmpnext = NULL;
 
-        if (*list == NULL || !list)
-                return;
-	
+	if (*list == NULL || !list)
+		return;
+
 	tmpnext = (*list)->next;
 	while (tmpnext != NULL)
 	{
@@ -20,11 +20,11 @@ void insertion_sort_list(listint_t **list)
 
 			if (tmpnext->next != NULL)
 				tmpnext->next->prev = tmpnext->prev;
-			
+
 			tmpnext->next = tmpnext->prev;
 			tmpnext->prev = tmpnext->prev->prev;
 			tmpnext->next->prev = tmpnext;
-			
+
 			if (tmpnext->prev == NULL)
 				*list = tmpnext;
 			else
