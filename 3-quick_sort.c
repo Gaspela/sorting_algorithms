@@ -56,7 +56,7 @@ int sort(int *arr, size_t size, int lowlimit, int limit)
     return (swapcurrent);
 }
 /**
- * swap - swaps two elements in an array.
+ * swap - Swap.
  * @one: First swap.
  * @two: Second swap.
  * @arr: Array.
