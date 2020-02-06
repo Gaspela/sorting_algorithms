@@ -6,11 +6,11 @@
 */
 void quick_sort(int *array, size_t size)
 {
-    int limit = size - 1;
+	int limit = size - 1;
 
-    if (size < 2)
-        return;
-    partition(array, size, 0, limit);
+	if (size < 2)
+		return;
+	partition(array, size, 0, limit);
 }
 /**
  * partition - Lomute.
@@ -21,14 +21,14 @@ void quick_sort(int *array, size_t size)
 */
 void partition(int *arr, size_t size, int lowlimit, int limit)
 {
-    int pivot;
+	int pivot;
 
-    if (lowlimit < limit)
-    {
-        pivot = sort(arr, size, lowlimit, limit);
-        partition(arr, size, lowlimit, pivot - 1);
-        partition(arr, size, pivot + 1, limit);
-    }
+	if (lowlimit < limit)
+	{
+		pivot = sort(arr, size, lowlimit, limit);
+		partition(arr, size, lowlimit, pivot - 1);
+		partition(arr, size, pivot + 1, limit);
+	}
 }
 /**
  * sort - Sort.
@@ -36,24 +36,25 @@ void partition(int *arr, size_t size, int lowlimit, int limit)
  * @lowlimit: lower limit.
  * @limit: Limit.
  * @size: Size.
+ * Return: asd
 */
 int sort(int *arr, size_t size, int lowlimit, int limit)
 {
-    int pivot = arr[limit], swapcurrent = lowlimit, i;
+	int pivot = arr[limit], swapcurrent = lowlimit, i;
 
-    for (i = lowlimit; i < limit; i++)
-        if (arr[i] < pivot)
-        {
-            if (i != swapcurrent && arr[i] != arr[swapcurrent])
-                swap(&arr[i], &arr[swapcurrent], size, arr);
+	for (i = lowlimit; i < limit; i++)
+		if (arr[i] < pivot)
+		{
+			if (i != swapcurrent && arr[i] != arr[swapcurrent])
+				swap(&arr[i], &arr[swapcurrent], size, arr);
 
-            swapcurrent++;
-        }
+			swapcurrent++;
+		}
 
-    if (limit != swapcurrent && arr[limit] != arr[swapcurrent])
-        swap(&arr[limit], &arr[swapcurrent], size, arr);
+	if (limit != swapcurrent && arr[limit] != arr[swapcurrent])
+		swap(&arr[limit], &arr[swapcurrent], size, arr);
 
-    return (swapcurrent);
+	return (swapcurrent);
 }
 /**
  * swap - Swap.
@@ -61,13 +62,14 @@ int sort(int *arr, size_t size, int lowlimit, int limit)
  * @two: Second swap.
  * @arr: Array.
  * @size: Size.
+ * Return: asd
 */
 void swap(int *one, int *two, size_t size, int *arr)
 {
-    int tmp;
+	int tmp;
 
-    tmp = *one;
-    *one = *two;
-    *two = tmp;
-    print_array(arr, size);
+	tmp = *one;
+	*one = *two;
+	*two = tmp;
+	print_array(arr, size);
 }
